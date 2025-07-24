@@ -86,7 +86,32 @@ Toda a informação da criatura que você quer criar está no arquivo `Dados.jso
     *   **Exemplo BOM (faça isso):**
         `"nome": "Bandido Demaciano"` -> `"nome": "Pássaro Bico-de-Serra"` (Apenas o valor foi alterado).
 
-4.  Altere todos os atributos da criatura conforme desejar e salve o arquivo.
+4.  **Adicionando mais itens em listas (Arrays):**
+    Alguns campos, como "caracteristicas", "ataques" e "reacoes", são o que chamamos de **Arrays** (ou listas). Eles são indicados pelos colchetes `[` e `]`. Dentro desses colchetes, você pode ter vários "objetos" (blocos de informação), cada um representando uma característica, um ataque, etc.
+
+    Para adicionar mais itens, você pode copiar um bloco existente e colá-lo dentro dos colchetes.
+
+    **Exemplo de um Array de Ataques:**
+    ```json
+    "ataques": [
+        {"nome": "Multi Ataque", "descricao": "O Bandido realiza dois ataques com a Espada Grande ou com a Besta Pesada"},
+        {"nome": "Espada Grande", "descricao": "Ataque corpo-a-corpo: +5 para atingir, 5 pés de distancia, apenas um alvo. (2d4 + 1 Dano Cortante)"}
+    ]
+    ```
+
+    Se você quiser adicionar mais um ataque, você copiaria a linha do "Espada Grande" e colaria abaixo. **ATENÇÃO: É FUNDAMENTAL que você adicione uma vírgula `,` no final de cada objeto DENTRO do array, EXCETO no último objeto.**
+
+    **Exemplo de como adicionar um novo ataque (com a vírgula correta):**
+    ```json
+    "ataques": [
+        {"nome": "Multi Ataque", "descricao": "O Bandido realiza dois ataques com a Espada Grande ou com a Besta Pesada"},
+        {"nome": "Espada Grande", "descricao": "Ataque corpo-a-corpo: +5 para atingir, 5 pés de distancia, apenas um alvo. (2d4 + 1 Dano Cortante)"}, <--- AQUI VAI UMA VÍRGULA!
+        {"nome": "Besta Pesada", "descricao": "Ataque a distancia: +3 para atingir, 200 pés de distancia, apenas um alvo. (1d6 Dano Perfurante)"} <--- AQUI NÃO VAI VÍRGULA!
+    ]
+    ```
+    Se você adicionar mais um ataque depois da "Besta Pesada", ela precisará de uma vírgula no final, e o novo ataque não terá.
+
+5.  Altere todos os atributos da criatura conforme desejar e salve o arquivo.
 
 ---
 
@@ -109,4 +134,4 @@ Pronto! Sua ficha de criatura foi gerada. Você pode repetir os passos 4 e 5 par
 
 Aqui está um exemplo de como a ficha da criatura ficará depois de gerada, usando os dados padrão que vêm com o projeto:
 
-![Exemplo de Ficha de Criatura](Ficha-Bandido-Demaciano.png)
+![Exemplo de Ficha de Criatura](Ficha-Grã-Mestra-das-Flores.png)
