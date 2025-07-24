@@ -10,7 +10,7 @@ with open(ARQUIVO_FICHA_JSON, 'r', encoding='utf-8') as f:
     ficha = json.load(f)
 
 # --- CONFIGURAÇÕES DE ESTILO ---
-WIDTH, HEIGHT = 800, 1100
+WIDTH, HEIGHT = 800, 8000 # Começa com uma tela bem alta para caber todo o conteúdo
 BG_COLOR = (255, 255, 255)
 BOX_COLOR = (230, 230, 230)
 HEADER_COLOR = (70, 70, 70)
@@ -179,10 +179,20 @@ def draw_section(y_start, title, content_list):
             if len(parts) == 2:
                 bold_part = f"{parts[0]}: "
                 regular_part = parts[1]
-                draw_rich_text((50, y), [(font_text_bold, bold_part), (font_text, regular_part)])
+                full_text = bold_part + regular_part
+                wrapped_lines = wrap_text(full_text, font_text, WIDTH - 100)
+                
+                for i, line in enumerate(wrapped_lines):
+                    if i == 0:
+                        draw_rich_text((50, y), [(font_text_bold, bold_part), (font_text, line[len(bold_part):])])
+                    else:
+                        draw_text((50, y), line)
+                    y += 20
             else:
-                draw_text((50, y), item)
-            y += 20
+                wrapped_lines = wrap_text(item, font_text, WIDTH - 100)
+                for line in wrapped_lines:
+                    draw_text((50, y), line)
+                    y += 20
         y += 5 # Espaço entre itens
 
     # Desenha o contorno da seção de conteúdo
@@ -223,7 +233,12 @@ runas_content = [
 y_cursor = draw_section(y_cursor, "RUNAS", runas_content)
 
 
-# --- SALVAR IMAGEM ---
+# --- AJUSTAR ALTURA E SALVAR IMAGEM ---
+# Adiciona um preenchimento na parte inferior para um melhor visual
+final_height = y_cursor + 20 
+# Corta a imagem para a altura calculada
+img = img.crop((0, 0, WIDTH, final_height))
+
 img_path = "Ficha-" + ficha['nome'].replace(" ", "-") + ".png"
 img.save(img_path)
 

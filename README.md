@@ -102,3 +102,11 @@ Agora que tudo está pronto, vamos executar o script.
 3.  Isso diz ao Python para executar o nosso script. Em alguns segundos, uma nova imagem `.png` com o nome da sua criatura (por exemplo, `Ficha-Pássaro-Bico-de-Serra.png`) aparecerá na mesma pasta do projeto.
 
 Pronto! Sua ficha de criatura foi gerada. Você pode repetir os passos 4 e 5 para criar quantas criaturas quiser.
+
+---
+
+## Exemplo de Ficha Gerada
+
+Aqui está um exemplo de como a ficha da criatura ficará depois de gerada, usando os dados padrão que vêm com o projeto:
+
+![Exemplo de Ficha de Criatura](Ficha-Bandido-Demaciano.png)
