@@ -233,7 +233,16 @@ runas_content = [
 y_cursor = draw_section(y_cursor, "RUNAS", runas_content)
 
 
-# --- AJUSTAR ALTURA E SALVAR IMAGEM ---
+# --- RECURSOS ÉPICOS ---
+epic_resources_content = [
+    f"Carga de ações épicas por turno: {ficha['cargas_acoes_epicas_por_turno']}",
+    f"Pontos de Resiliência: {ficha['pontos_resiliencia']}",
+    f"Pontos gastos para resistir: {ficha['pontos_gastos_para_resistir']}"
+]
+y_cursor = draw_section(y_cursor, "RECURSOS ÉPICOS", epic_resources_content)
+
+
+# --- SALVAR IMAGEM ---
 # Adiciona um preenchimento na parte inferior para um melhor visual
 final_height = y_cursor + 20 
 # Corta a imagem para a altura calculada
