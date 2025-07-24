@@ -1,0 +1,39 @@
+{
+    "nome": "Bandido Demaciano",
+    "funcao": "Soldado",
+    "nd": "2",
+    "tipo_subtipo_descritores_tamanho": "Humanoide, Médio",
+    "pv": "10d12 + 20",
+    "ca": "16",
+    "rd": "1",
+    "proficiencia": "+2",
+    "iniciativa": "+3",
+    "for": 16, "des": 13, "con": 14,
+    "int": 10, "sab": 11, "car": 10,
+    "sentidos": "Percepção passiva 12",
+    "movimento": "30 pés (Caminhada)",
+    "pericias": "Atletismo +5, Percepção +2",
+    "idiomas": "Demaciano",
+    "exp_coletivo": "-",
+    "exp_individual": "-",
+    "salvaguardas": "For +3, Des +1, Con +2",
+    "resistencias_dano": "Danos Mágicos",
+    "imunidades_dano": "Nenhuma",
+    "vulnerabilidades_dano": "Nenhuma",
+    "resistencias_condicao": "Nenhuma",
+    "imunidades_condicao": "Nenhuma",
+    "vulnerabilidades_condicao": "Nenhuma",
+    "caracteristicas": [
+        {"nome": "-", "descricao": "-"}
+    ],
+    "ataques": [
+        {"nome": "Multi Ataque", "descricao": "O Bandido realiza dois ataques com a Espada Grande ou com a Besta Pesada"},
+        {"nome": "Espada Grande", "descricao": "Ataque corpo-a-corpo: +5 para atingir, 5 pés de distancia, apenas um alvo. (2d4 + 1 Dano Cortante)"},
+        {"nome": "Besta Pesada", "descricao": "Ataque a distancia: +3 para atingir, 200 pés de distancia, apenas um alvo. (1d6 Dano Perfurante)"}
+    ],
+    "reacoes": [
+        {"nome": "Parry", "gatilho": "O Bandido é atacado corpo-a-corpo enquanto segura sua espada", "resposta": "Adiciona +2 de CA para o próximo ataque igual ao recebido"}
+    ],
+    "pulso_runico": "Sorvedor de Mana: Cada magia desferida contra essa criatura tem 20% de chances de ser absorvida. Magias absorvidas curam a criatura em 1 dado de vida por círculo da magia",
+    "runas": "Surto Territorialista (1 uso)"
+}
